@@ -1,8 +1,4 @@
 use bank_database;
-ALTER TABLE account
-ADD CONSTRAINT chk_account_number_length
-CHECK (LENGTH(account_number) = 15 AND account_number REGEXP '^[0-9]+$');
-
 
 INSERT INTO fd_plan (fd_plan_id, duration, Interest_rate) VALUES
 (1, 365, 5.00),
@@ -30,8 +26,8 @@ INSERT INTO customer (customer_id, user_id, customer_type, contact_number, addre
 (2, 3, 'organization', '0987654321', '456 North St, Cityville');
 
 INSERT INTO account (account_id, account_type, account_number, customer_id, branch_id, balance, status) VALUES
-(1, 'savings', 1234567890, 1, 1, 5000.00, 'active'),
-(2, 'checking', '0987654321', 2, 2, 10000.00, 'active');
+(1, 'savings', 123456789012345, 1, 1, 5000.00, 'active'),
+(2, 'checking', '098765432198765', 2, 2, 10000.00, 'active');
 
 INSERT INTO savings_account (savings_account_id, account_id, savings_plan_id) VALUES
 (1, 1, 3),
